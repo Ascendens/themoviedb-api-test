@@ -11,11 +11,13 @@ class Authentication extends AbstractModule
     /**
      * Starts new guest session
      *
+     * @param array $headers
+     * @param array $options
      * @return array
      */
-    public function newGuestSession()
+    public function newGuestSession(array $headers = [], array $options = [])
     {
-        return $this->makeRequest('/authentication/guest_session/new', 'GET');
+        return $this->makeRequest('/authentication/guest_session/new', 'GET', '', [], $headers, $options);
     }
 
     /**
