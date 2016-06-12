@@ -1,6 +1,6 @@
 {
-    "name": "ankot/testing",
-    "description": "Different tests",
+    "name": "ascendens/themoviedb-api-test",
+    "description": "Partial implementation of wrapper to the www.themoviedb.org API",
     "require": {
         "zendframework/zend-diactoros": "^1.3",
         "symfony/expression-language": "^3.1"
