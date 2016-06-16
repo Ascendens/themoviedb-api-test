@@ -9,6 +9,11 @@ namespace Ascendens\Tmdb\Module;
 use Ascendens\Tmdb\Session\SessionAwareInterface;
 use Ascendens\Tmdb\Session\SessionAwareTrait;
 
+/**
+ * Provides access to <b>movies</b> API methods. Not all methods available
+ *
+ * @link http://docs.themoviedb.apiary.io/#reference/movies
+ */
 class Movie extends AbstractModule implements SessionAwareInterface
 {
     use SessionAwareTrait;
@@ -16,11 +21,13 @@ class Movie extends AbstractModule implements SessionAwareInterface
     /**
      * Returns information of a movie
      *
+     * @link http://docs.themoviedb.apiary.io/#reference/movies/movieid
+     *
      * @param int $id
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @param array $parameters API parameters
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function get($id, array $parameters = [], array $headers = [], array $options = [])
     {
@@ -30,12 +37,14 @@ class Movie extends AbstractModule implements SessionAwareInterface
     /**
      * Sets up rating for movie
      *
+     * @link http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/post
+     *
      * @param int $id
      * @param int $rating
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @param array $parameters API parameters
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function setRating($id, $rating, array $parameters = [], array $headers = [], array $options = [])
     {
@@ -52,11 +61,13 @@ class Movie extends AbstractModule implements SessionAwareInterface
     /**
      * Deletes rating of a movie
      *
+     * @link http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/delete
+     *
      * @param int $id
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @param array $parameters API parameters
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function deleteRating($id, array $parameters = [], array $headers = [], array $options = [])
     {
@@ -71,7 +82,7 @@ class Movie extends AbstractModule implements SessionAwareInterface
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
     protected function getRequiredParametersMap()
     {
@@ -82,8 +93,10 @@ class Movie extends AbstractModule implements SessionAwareInterface
     }
 
     /**
-     * @param array $parameters
-     * @return array
+     * Adds session ID to parameters if necessary.
+     *
+     * @param array $parameters Current parameters
+     * @return array Parameters with session ID
      */
     private function appendSessionId(array $parameters)
     {

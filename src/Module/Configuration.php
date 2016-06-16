@@ -6,14 +6,19 @@
 
 namespace Ascendens\Tmdb\Module;
 
+/**
+ * Provides access to <b>configuration</b> API methods
+ *
+ * @link http://docs.themoviedb.apiary.io/#reference/configuration
+ */
 class Configuration extends AbstractModule
 {
     /**
      * Get the system wide configuration information
      *
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @param array $headers Custom request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function get(array $headers = [], array $options = [])
     {
@@ -21,7 +26,7 @@ class Configuration extends AbstractModule
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
     protected function getRequiredParametersMap()
     {

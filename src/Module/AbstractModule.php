@@ -89,10 +89,10 @@ abstract class AbstractModule implements ModuleInterface
      * @param string $uri
      * @param string $method
      * @param mixed $body
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return mixed
+     * @param array $parameters API parameters {@see http://docs.themoviedb.apiary.io }
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return mixed Response body
      */
     protected function makeRequest(
         $uri,

@@ -9,6 +9,9 @@ namespace Ascendens\Tmdb\Module;
 use Ascendens\Tmdb\Exception\ModuleNotFoundException;
 use InvalidArgumentException;
 
+/**
+ * Uses predefined factories to create modules instances
+ */
 class ModuleFactory implements ModuleFactoryInterface
 {
     /**

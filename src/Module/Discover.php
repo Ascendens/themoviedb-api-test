@@ -8,15 +8,22 @@ namespace Ascendens\Tmdb\Module;
 
 use InvalidArgumentException;
 
+/**
+ * Provides access to <b>discover</b> API methods
+ *
+ * @link http://docs.themoviedb.apiary.io/#reference/discover
+ */
 class Discover extends AbstractModule
 {
     /**
      * Makes discover movie request
      *
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @link http://docs.themoviedb.apiary.io/#reference/discover/discovermovie
+     * 
+     * @param array $parameters API parameters
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function movie(array $parameters = [], array $headers = [], array $options = [])
     {
@@ -40,10 +47,12 @@ class Discover extends AbstractModule
     /**
      * Makes discover tv request
      *
-     * @param array $parameters
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @link http://docs.themoviedb.apiary.io/#reference/discover/discovertv
+     * 
+     * @param array $parameters API parameters
+     * @param array $headers Request headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function tv(array $parameters = [], array $headers = [], array $options = [])
     {

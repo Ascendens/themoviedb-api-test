@@ -6,14 +6,21 @@
 
 namespace Ascendens\Tmdb\Module;
 
+/**
+ * Provides access to <b>authentication</b> API methods. Not all methods available
+ *
+ * @link http://docs.themoviedb.apiary.io/#reference/authentication
+ */
 class Authentication extends AbstractModule
 {
     /**
      * Starts new guest session
      *
-     * @param array $headers
-     * @param array $options
-     * @return array
+     * @link http://docs.themoviedb.apiary.io/#reference/authentication/authenticationguestsessionnew
+     *
+     * @param array $headers headers
+     * @param array $options HTTP client options
+     * @return array Response body
      */
     public function newGuestSession(array $headers = [], array $options = [])
     {

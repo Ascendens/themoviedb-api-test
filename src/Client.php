@@ -15,9 +15,19 @@ use Ascendens\Tmdb\Session\SessionAwareInterface;
 use Ascendens\Tmdb\Session\SessionAwareTrait;
 use Closure;
 use InvalidArgumentException;
+use Ascendens\Tmdb\Module;
 
 /**
- * Provide dynamic access to existent modules
+ * Provide dynamic access to existing modules. Use camel case class name to access, for example:
+ * <code>
+ * $client = new Client('apiKey', $httpClientInterfaceImplementation);
+ * $configuration = $client->configuration; // Ascendens\Tmdb\Module\Configuration
+ * </code>
+ *
+ * @property-read Module\Authentication $authentication
+ * @property-read Module\Configuration $configuration
+ * @property-read Module\Discover $discover
+ * @property-read Module\Movie $movie
  */
 class Client implements SessionAwareInterface
 {
